@@ -14,7 +14,7 @@ export class RegisterComponent {
     this.formulario = new FormGroup({
       username: new FormControl(),
       empresa: new FormControl(),
-      NIT: new FormControl(),
+      nit: new FormControl(),
       email: new FormControl(),
       password: new FormControl(),
     });

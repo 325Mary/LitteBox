@@ -1,0 +1,14 @@
+<!-- pre-registro.component.html -->
+<div class="container mt-5">
+    <!-- ... otros elementos ... -->
+    <div class="mb-4">
+      <label for="opcion" class="form-label">Como deseas Registrarte:</label>
+      <select class="form-select" id="opcion" (change)="aceptarSeleccion($event)">
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="opcion-1">Empresa</option>
+        <option value="opcion-2">Empleado</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" (click)="aceptarSeleccion($event)">aceptar</button>
+</div>
+  
