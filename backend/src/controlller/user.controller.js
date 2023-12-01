@@ -2,6 +2,8 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/user.model');
 const jwt = require('jsonwebtoken')
+const crypto = require('crypto');
+
 
 const controller = {}
 // post
@@ -12,7 +14,7 @@ controller.postUser= async (req, res) => {
         res.json(user);
     } catch (e) {
         console.error('Error:', e);
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(500).json({ error: 'Internal server error', message: e.message });
     }
 };
 
@@ -36,14 +38,40 @@ controller.postLogin = async (req,res)=>{
     res.json({success: 'Iniciaste sesion' , token: crearToken(user) })
 
 }
+//recuperar contraseña
+controller.forgotPassword = async (req, res) => {
+    const { email } = req.body;
+  
+    try {
+      const user = await User.findOne({ email });
+  
+      if (!user) {
+        return res.json({ error: 'Usuario no encontrado' });
+      }
+  
+      const token = crypto.randomBytes(20).toString('hex');
+      
+      user.resetPasswordToken = token;
+      user.resetPasswordExpires = Date.now() + 3600000; // 1 hora de validez
+      
+      await user.save();
+    // Enviar el token al usuario (puedes enviarlo por correo electrónico o mensajes)
+    // Para propósitos de demostración, simplemente enviamos el token en la respuesta
+    res.json({ resetToken: token });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error', message: error.message });
+  }
+};
+
+    
 
 function crearToken(user) {
         const payload ={
             user_id: user._id,
             user_role: user.role
         }
-        return jwt.sign(payload, 'running')
-
+        return jwt.sign(payload, process.env.JWT_SECRET);
         // const payload = {
         //     user_id: user._id,
         //     user_role: user.role,
@@ -53,4 +81,4 @@ function crearToken(user) {
 }
 
 
-module.exports = controller;
+module.exports = controller

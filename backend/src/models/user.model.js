@@ -5,7 +5,9 @@ const userSchema= new Schema({
     empresa: String,
     nit: Number,
     email: String,
-    password:  { type: String, select: false },
+    password: String,
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
 
 })
 
