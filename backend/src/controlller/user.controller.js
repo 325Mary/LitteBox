@@ -1,5 +1,5 @@
-const { createUser, loginUser, generateResetToken } = require('../services/user.services');
-const user = require('../models/user.model');
+const { createUser, loginUser, resetPassword, restablecerPassword } = require('../services/user.services');
+const User = require('../models/user.model');
 
 
 const controller = {};
@@ -13,41 +13,50 @@ controller.postLogin = async (req, res) => {
 };
 
 
+controller.resetPasswordPost = async (req, res) => {
+  const { email } = req.body;
 
-controller.forgotPassword = async (req, res) => {
   try {
-    const user = await User.findOne({ email: req.body.email });
+    // Verificar si el correo existe en tu sistema
+    const user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(404).json({ error: 'Usuario no encontrado' });
+      return res.status(404).json({ success: false, message: 'Correo no encontrado en el sistema.' });
     }
 
-    const resetToken = await authService.generateResetToken(user);
+    // Generar el token
+    const token = await resetPassword.generateToken(email);
 
-    // Envía un correo electrónico con el enlace que contiene el token de restablecimiento
-    // (puedes usar nodemailer u otra biblioteca para enviar correos electrónicos)
-    // ...
+    // Aquí puedes decidir qué hacer con el token, por ejemplo, almacenarlo en la base de datos
+    // o enviarlo como respuesta al cliente para que maneje el restablecimiento de la contraseña.
 
-    res.json({ success: 'Se ha enviado un correo electrónico con las instrucciones para restablecer la contraseña' });
+    // En este ejemplo, simplemente respondemos con el token (esto podría ser un riesgo de seguridad en un entorno de producción)
+    res.json({ success: true, token });
   } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ error: 'Error interno del servidor', message: error.message });
+    console.error('Error al generar el token:', error);
+    res.status(500).json({ success: false, message: 'Error al generar el token.' });
   }
 };
 
-controller.resetPassword = async (req, res) => {
+controller.restablecerPassword = async (req, res) => {
+  const { token } = req.query;
+
   try {
-    const token = req.params.token;
-    const newPassword = req.body.newPassword;
+    // Procesar el token utilizando la función del servicio
+    const user = await restablecerPassword.processResetToken(token);
 
-    await authService.resetPassword(token, newPassword);
+    // Permitir que el usuario establezca una nueva contraseña (puedes hacerlo a través de un formulario en tu página)
+    // Después de establecer la nueva contraseña, puedes invalidar o eliminar el token para mayor seguridad.
 
-    res.json({ success: 'Contraseña restablecida correctamente' });
+    res.json({ success: true, message: 'Token válido. Permitir al usuario restablecer la contraseña.' });
   } catch (error) {
-    console.error('Error:', error);
-    res.status(400).json({ error: 'No se pudo restablecer la contraseña', message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
+
+
+
+
 
 
 module.exports = controller;

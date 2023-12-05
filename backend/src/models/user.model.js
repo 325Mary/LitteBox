@@ -16,8 +16,6 @@ const userSchema= new Schema({
         required: [true, 'constraseña requerida']},
     imagenfirme: {type: String,
         required:[true, 'Imagen de firma es requerida']},
-    resetPasswordToken: String,
-    resetPasswordExpires: Date,
 
 })
 
