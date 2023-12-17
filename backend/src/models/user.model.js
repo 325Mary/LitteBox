@@ -5,17 +5,19 @@ const userSchema= new Schema({
         required:[true, 'nombre requerido']},
     empresa: {type: String,
         required: [true, 'nombre de empresa requerido']},
-    nit: {type: Number,
+    tenantId: {type: String,
         required: [true, 'Nit de la empresa requerido'],
-        unique:false
+        // unique:false
         },
     email: {type: String,
         required:[true, 'correo requerido'],
         unique: true},
     password: {type: String,
         required: [true, 'constraseña requerida']},
-    imagenfirme: {type: String,
+    imgfirme: {type: String,
         required:[true, 'Imagen de firma es requerida']},
+    // pdfArchivo: {type: String,
+    // required:[false, "Pdf es requerido"]}
 
 })
 

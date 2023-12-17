@@ -1,11 +1,13 @@
-const {Router} = require('express')
-const routes= Router()
-const {postUser, postLogin, resetPasswordPost, restablecerPassword} = require ('../controlller/user.controller')
-const upload = require('../middleware/multerMiddleware')
+const express = require('express');
+const {upload,pdfUpload } = require('../middleware/multerMiddleware');
 
+const { postUser, postLogin, resetPasswordPost, restablecerPassword } = require('../controlller/user.controller');
 
-routes.post('/registrar',upload.single("image"), postUser)
-routes.post('/iniciarSesion', postLogin)
-routes.post('/reset-password', resetPasswordPost)
-routes.get('/restablecer', restablecerPassword)
-module.exports = routes 
+const routes = express.Router();
+
+routes.post('/registrar', upload.single("imgfirme"), postUser);
+routes.post('/iniciarSesion', postLogin);
+routes.post('/reset-password', resetPasswordPost);
+routes.get('/restablecer', restablecerPassword);
+
+module.exports = routes;

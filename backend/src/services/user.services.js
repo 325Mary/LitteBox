@@ -11,10 +11,14 @@ const createUser = async (req, res) => {
     const user = await User.create({
       username: req.body.username,
       empresa: req.body.empresa,
-      nit: re.body.nit,
+      tenantId: req.body.tenantId,
       email: req.body.email,
       password: req.body.password,
+      imgfirme: req.file ? req.file.path : null ,     // pdfarchivo: req.file.path
+      // pdfArchivo: req.file ? req.file.path : null      
+
     });
+
     res.json(user);
   } catch (e) {
     console.error('Error:', e);

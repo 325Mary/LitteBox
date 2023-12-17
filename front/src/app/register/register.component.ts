@@ -1,5 +1,4 @@
-import { Component, Inject } from '@angular/core'; // Correct import
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
 import { UsersService } from "../services/users.service";
 
 @Component({
@@ -8,20 +7,39 @@ import { UsersService } from "../services/users.service";
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  formulario: FormGroup;
+  username: string = '';
+  empresa: string = '';
+  tenantId: string = '';
+  email: string = '';
+  password: string = '';
+  imgfirme: File | null = null;
+  registrationError = '';
 
-  constructor(private userService: UsersService) { // Inject UsersService through the constructor
-    this.formulario = new FormGroup({
-      username: new FormControl(),
-      empresa: new FormControl(),
-      nit: new FormControl(),
-      email: new FormControl(),
-      password: new FormControl(),
-    });
+  constructor(private usersService: UsersService) {}
+
+  onFileSelected(event: any): void {
+    const file = event.target.files[0];
+    this.imgfirme = file;
   }
+  onSubmit(): void {
+    const formValue = {
+      username: this.username,
+      empresa: this.empresa,
+      tenantId: this.tenantId,
+      email: this.email,
+      password: this.password,
+      imgfirme: this.imgfirme
+    };
 
-  async onSubmit() {
-    const response = await this.userService.register(this.formulario.value);
-    console.log(response);
+    this.usersService.register(formValue).subscribe(
+      response => {
+        console.log('Respuesta:', response);
+        // Realizar acciones después de registrar
+      },
+      error => {
+        console.error('Error en la solicitud HTTP:', error);
+        this.registrationError = 'Error en el registro. Verifica los datos e inténtalo nuevamente.';
+      }
+    );
   }
 }

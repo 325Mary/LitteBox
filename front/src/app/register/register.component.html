@@ -1,29 +1,36 @@
 <div class="card text-center" style="width: 300px; margin: 20px auto;">
   <div class="card-body">
-    <!-- Your form goes here -->
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label>Username</label>
-        <input type="text" class="form-control" formControlName="username">
+        <input type="text" class="form-control" [(ngModel)]="username" name="username">
       </div>
       <div class="mb-3">
         <label>Empresa</label>
-        <input type="text" class="form-control" formControlName="empresa">
+        <input type="text" class="form-control" [(ngModel)]="empresa" name="empresa">
       </div>
       <div class="mb-3">
         <label>NIT</label>
-        <input type="number" class="form-control" formControlName="nit">
+        <input type="text" class="form-control" [(ngModel)]="tenantId" name="tenantId">
       </div>
       <div class="mb-3">
         <label>Email</label>
-        <input type="text" class="form-control" formControlName="email">
+        <input type="text" class="form-control" [(ngModel)]="email" name="email">
       </div>
       <div class="mb-3">
         <label>Password</label>
-        <input type="password" class="form-control" formControlName="password">
+        <input type="password" class="form-control" [(ngModel)]="password" name="password">
+      </div>
+      <div class="mb-3">
+        <label>Imagen de firma</label>
+        <input type="file" class="form-control" (change)="onFileSelected($event)">
       </div>
 
-      <input class="btn btn-info">
+      <button type="submit">Registrarse</button>
+
+      <div *ngIf="registrationError">
+        {{ registrationError }}
+      </div>
     </form>
   </div>
 </div>

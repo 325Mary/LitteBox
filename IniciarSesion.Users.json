@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "6577d3fa07f7eeeff33a2d00"
+  },
+  "username": " Mc325",
+  "empresa": "empresa1",
+  "tenantId": "4230540936-68787",
+  "email": "mcordoba577@misena.edu.co",
+  "password": "$2b$12$k7wSOzt/GXZGyYFiiXHSjuVPZIGjVl8PqDuFgt9YDZk/ButLyvu4e",
+  "imgfirme": "public\\uploads\\1702351866606-grp.jpeg",
+  "__v": 0
+}]

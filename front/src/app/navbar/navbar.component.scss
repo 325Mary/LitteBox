@@ -1,0 +1,14 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* styles.scss o styles.css */
+.my-dialog-container {
+    z-index: 10000;
+  }
+
+  body.dialog-open {
+    opacity: 0.5; /* Ajusta según sea necesario */
+    /* Otros estilos específicos cuando el diálogo está abierto */
+  }
+  
+  
+  

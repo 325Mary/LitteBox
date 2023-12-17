@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,25 +8,23 @@ export class UsersService {
 
   private baseUrl: string;
 
+  
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://localhost:3000";
+    this.baseUrl = "http://127.0.0.1:3200";
   }
 
   register(formValue: any) {
-    const url = `${this.baseUrl}/registrar`;
-    return firstValueFrom(
-      this.httpClient.post<any>(url, formValue)
-
-    ).catch((error) => {
-      console.error('Error en la solicitud HTTP:', error);
-      throw error; // Propaga el error para que el componente que llama también pueda manejarlo
+    const formData = new FormData();
+    Object.keys(formValue).forEach(key => {
+      formData.append(key, formValue[key]);
     });
+
+    const url = `${this.baseUrl}/registrar`;
+    return this.httpClient.post<any>(url, formData);
   }
 
   login(formValue: any) {
     const url = `${this.baseUrl}/iniciarSesion`;
-    return firstValueFrom(
-      this.httpClient.post<any>(url, formValue)
-    )
-}
+    return this.httpClient.post<any>(url, formValue);
+  }
 }

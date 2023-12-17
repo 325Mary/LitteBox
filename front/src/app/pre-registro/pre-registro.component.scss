@@ -1,0 +1,42 @@
+/* pre-registro.component.scss o pre-registro.component.css */
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para resaltar el diálogo */
+  }
+  
+  .container {
+    width: 500px;
+    height: auto; /* Permitir que la altura sea determinada por el contenido */
+    background-color: white; /* Fondo blanco para el contenido del diálogo */
+    padding: 20px;
+  }
+
+  .container {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .nav-tabs {
+    justify-content: center;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+  }
+  
+  .tab-content {
+    height: 500px;
+  }
+  
+  .tab-pane {
+    height: 100%;
+  }
+  
+  

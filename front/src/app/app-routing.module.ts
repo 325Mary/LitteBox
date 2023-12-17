@@ -16,7 +16,8 @@ const routes: Routes = [
   {path: 'preRegistro', component: PreRegistroComponent},
   {path: 'preRegistroEmpresa', component: PreRegistroEmpresaComponent},
   {path: 'prueba', component: PruebaComponent},
-  {path:'prueRegis', component: PruebaregistraseComponent}
+  {path:'prueRegis', component: PruebaregistraseComponent},
+  { path: '', redirectTo: '/iniciarSesion', pathMatch: 'full' }
 
 ];
 
