@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "65b1df11d6f0c991dde2096c"
+  },
+  "nameCompany": "empresa1",
+  "tenantId": "kdslnl-23456",
+  "email": "empresa1@gmail.com",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b2ca1d0a7126825d934d1b"
+  },
+  "nameCompany": "empresa2",
+  "tenantId": "kdslnl-23456",
+  "email": "empresa1@gmail.com",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b2ca240a7126825d934d1d"
+  },
+  "nameCompany": "empresa3",
+  "tenantId": "kdslnl-23456",
+  "email": "empresa1@gmail.com",
+  "__v": 0
+}]

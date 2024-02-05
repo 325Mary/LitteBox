@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "65bb2abc359e11f515c1ff45"
+  },
+  "nameRol": "Gerente",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65bb2ac7359e11f515c1ff47"
+  },
+  "nameRol": "Contador",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65bb2ace359e11f515c1ff49"
+  },
+  "nameRol": "Colaborador",
+  "__v": 0
+}]

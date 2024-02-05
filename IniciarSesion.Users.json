@@ -1,12 +1,130 @@
 [{
   "_id": {
-    "$oid": "6577d3fa07f7eeeff33a2d00"
+    "$oid": "65b1e9faf71c2519bde24ff9"
   },
-  "username": " Mc325",
-  "empresa": "empresa1",
-  "tenantId": "4230540936-68787",
-  "email": "mcordoba577@misena.edu.co",
-  "password": "$2b$12$k7wSOzt/GXZGyYFiiXHSjuVPZIGjVl8PqDuFgt9YDZk/ButLyvu4e",
-  "imgfirme": "public\\uploads\\1702351866606-grp.jpeg",
+  "tenantId": {
+    "$oid": "65b1df11d6f0c991dde2096c"
+  },
+  "email": "serviddracilenaescffdhdffhg@hotmai ml.com",
+  "password": "$2b$12$MsYfoVd8hBWDd29NLU4f/.tgGNGgbsl0kgWIeRf2yGsYoDSYwMjoK",
+  "imgfirme": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b1eb1569fb7c8156d3465c"
+  },
+  "tenantId": {
+    "$oid": "65b1df11d6f0c991dde2096c"
+  },
+  "email": "serviddracilenaescffdhdffhg@hotmai ml.com1",
+  "password": "$2b$12$KJtCBeIOUv9zACUxPJfRcek18LoeaOGTOFw72Ak7JFCdymW8ByMHW",
+  "imgfirme": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65bafb91e51127463ecc4f20"
+  },
+  "username": "usuario1",
+  "tenantId": {
+    "$oid": "65b1df11d6f0c991dde2096c"
+  },
+  "email": "usuario@gmail.com",
+  "password": "$2b$12$QI1RVxqn8yQdPCkFiKEz/u4W.dIqy1H48mC96H1pyhTO4Fnv49v6a",
+  "imgfirme": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65bafbace51127463ecc4f24"
+  },
+  "username": "usuario1",
+  "tenantId": {
+    "$oid": "65b1df11d6f0c991dde2096c"
+  },
+  "email": "usuario1@gmail.com",
+  "password": "$2b$12$QXYJXybVjU/O6Xn9q9ZsW.Sloi7vJhZoOp0pzR0Os5UjVfQZHldtu",
+  "imgfirme": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65bb0227e56b05e2b6294dc6"
+  },
+  "username": "usuario2",
+  "tenantId": {
+    "$oid": "65b1df11d6f0c991dde2096c"
+  },
+  "email": "usuario2@gmail.com",
+  "password": "$2b$12$NPL51qczXgJvQ4u1vpohZOP9BGK9724AxdGiXOudBBraHRYscwGwe",
+  "imgfirme": null,
+  "__v": 0,
+  "rol": {
+    "$oid": "65bb2abc359e11f515c1ff45"
+  }
+},
+{
+  "_id": {
+    "$oid": "65bb04aef5beb7af2bc27e10"
+  },
+  "username": "usuario3",
+  "tenantId": {
+    "$oid": "65b1df11d6f0c991dde2096c"
+  },
+  "email": "usuario3@gmail.com",
+  "password": "$2b$12$IEf1pNv8uAnEDZxZViejG.Ml1JEzjBuVWnUeZYzDM4II6mPALPgF2",
+  "imgfirme": "public\\uploads\\1706755246066-Captura de pantalla (1).png",
+  "__v": 0,
+  "rol": {
+    "$oid": "65bb2abc359e11f515c1ff45"
+  }
+},
+{
+  "_id": {
+    "$oid": "65bb0635f5beb7af2bc27e12"
+  },
+  "username": "gdhjsk",
+  "tenantId": {
+    "$oid": "65b1df11d6f0c991dde2096c"
+  },
+  "email": "serviddracilenaescffdhdffccdcvfhg@hotmai ml.com",
+  "password": "$2b$12$U7OZRFIkEPWcGyhdLvlZruWD3MQyEqxpzFzWyq6tuIGkjTHnCCbci",
+  "imgfirme": null,
+  "__v": 0,
+  "rol": {
+    "$oid": "65bb2abc359e11f515c1ff45"
+  }
+},
+{
+  "_id": {
+    "$oid": "65bb067631731f212d5bb4d9"
+  },
+  "username": "gdhjsk",
+  "tenantId": {
+    "$oid": "65b1df11d6f0c991dde2096c"
+  },
+  "email": "wdft567@hotmai ml.com",
+  "password": "$2b$12$.up.BFMiOmNzrBxssvVYleEdSCaEjLiVrTsILo4l2BXh7aUwo.1L6",
+  "imgfirme": null,
+  "direction": "serty",
+  "__v": 0,
+  "rol": {
+    "$oid": "65bb2abc359e11f515c1ff45"
+  }
+},
+{
+  "_id": {
+    "$oid": "65bb069ef1ce333a1e5dcfe8"
+  },
+  "username": "usuario3",
+  "tenantId": {
+    "$oid": "65b1df11d6f0c991dde2096c"
+  },
+  "email": "usuario4@gmail.com",
+  "password": "$2b$12$2yA486Y40TBIXj39f/yZ6.Gpa/auGxDmrpAb.3hrIsS9BaqVEaaLS",
+  "imgfirme": "public\\uploads\\1706755742168-Captura de pantalla (1).png",
+  "telephone": "1234567",
+  "direction": "direccion1",
   "__v": 0
 }]
